@@ -2,47 +2,108 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Blog da Ju</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog do IFRO Zona Norte 🌿</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <script>
-    alert (" Deseja mesmo saber as melhores noticias do IFRO ZN ")
-  </script>
+<body onload="mostrarBoasVindas()">
   <header>
-    <h1>Blog da Ju✨✨✨</h1>
-    <p>Novidades escolares, eventos e muito mais!</p>
+    <div class="logo">
+      <h1>Blog do IFRO Zona Norte 🌿</h1>
+      <p>Notícias, eventos e novidades da nossa comunidade escolar!</p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="#">Projetos</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+    <button id="modoBtn" onclick="alternarModo()">🌙 Modo Escuro</button>
   </header>
 
   <main class="container">
-    <article class="noticia not5">
-      <h2>Notícia 5</h2>
-      <p>Resumo de uma novidade escolar incrível que está rolando essa semana. Não perca!</p>
-    </article>
-
-    <article class="noticia not1">
-      <h2>Notícia 1</h2>
-      <p>Alunos se destacam em olimpíadas escolares e conquistam ótimos resultados.</p>
-    </article>
-
-    <article class="noticia not4">
-      <h2>Notícia 4</h2>
-      <p>A nova feira cultural promete trazer muita arte, música e diversão para toda a escola.</p>
-    </article>
-
-    <article class="noticia not3">
-      <h2>Notícia 3</h2>
-      <p>Confira como foi o campeonato interclasses e veja os destaques das partidas emocionantes.</p>
-    </article>
-
-    <article class="noticia not2">
-      <h2>Notícia 2</h2>
-      <p>Estudantes organizam campanha solidária para ajudar comunidades locais.</p>
-    </article>
+    <a href="feira-ciencias-2025.html" class="noticia-link">
+      <article class="noticia">
+        <h2>Feira de Ciências 2025</h2>
+        <p>Os alunos apresentaram projetos inovadores sobre sustentabilidade e tecnologia verde. Um show de criatividade!</p>
+      </article>
+    </a>
+    
+    <a href="semana-meio-ambiente.html" class="noticia-link">
+      <article class="noticia">
+        <h2>Semana do Meio Ambiente</h2>
+        <p>Palestras, trilhas e ações ecológicas tomaram conta do campus durante a Semana Verde do IFRO Zona Norte.</p>
+      </article>
+    </a>
+    
+    <a href="ifro-tech-expo.html" class="noticia-link">
+      <article class="noticia">
+        <h2>IFRO Tech Expo</h2>
+        <p>Os estudantes mostraram suas criações em robótica, programação e automação. Inovação que inspira!</p>
+      </article>
+    </a>
+    
+    <a href="campanha-solidaria.html" class="noticia-link">
+      <article class="noticia">
+        <h2>Campanha Solidária</h2>
+        <p>Com o apoio de todos, a campanha arrecadou mais de 300kg de alimentos e materiais escolares.</p>
+      </article>
+    </a>
+    
+    <a href="interclasses-2025.html" class="noticia-link">
+      <article class="noticia">
+        <h2>Interclasses 2025</h2>
+        <p>O campeonato esportivo promoveu integração, amizade e muita energia entre as turmas.</p>
+      </article>
+    </a>
   </main>
 
   <footer>
-    <p>© 2025 - Blog da Ju | Feito com 💖 para compartilhar notícias escolares</p>
+    <p>© 2025 - Blog do IFRO Zona Norte | Feito por estudantes do IFRO Zona Norte| Autoria de Ian Guaitolini e João Moura</p>
   </footer>
+
+  <button id="btnTopo" onclick="voltarAoTopo()">⬆</button>
+
+  <script>
+    // Mensagem de boas-vindas
+    function mostrarBoasVindas() {
+      alert("🌿 Bem-vindo(a) ao Blog do IFRO Zona Norte! Fique por dentro das novidades!");
+    }
+
+    // Alternar modo escuro
+    function alternarModo() {
+      document.body.classList.toggle("dark-mode");
+      const botao = document.getElementById("modoBtn");
+      if (document.body.classList.contains("dark-mode")) {
+        botao.textContent = "☀️ Modo Claro";
+      } else {
+        botao.textContent = "🌙 Modo Escuro";
+      }
+    }
+
+    //  Mostrar botão e rolar para o topo
+    window.onscroll = function() {
+      const btn = document.getElementById("btnTopo");
+      btn.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
+    };
+
+    function voltarAoTopo() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Animação de entrada suave nos artigos
+    const noticias = document.querySelectorAll(".noticia");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    });
+    noticias.forEach(noticia => observer.observe(noticia));
+  </script>
 </body>
+</html>
 </html>
