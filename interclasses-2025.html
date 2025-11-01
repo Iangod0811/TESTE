@@ -16,10 +16,11 @@
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="#">Eventos</a></li>
-        <li><a href="#">Projetos</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
+    <button id="modoBtn" onclick="alternarModo()">🌙 Modo Escuro</button>
   </header>
 
   <main class="container">
@@ -38,5 +39,27 @@
   <footer>
     <p>&copy; 2025 Blog do IFRO Zona Norte. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    // Verificar e aplicar modo escuro ao carregar
+    function aplicarModoEscuro() {
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      document.body.classList.toggle('dark-mode', isDarkMode);
+      const botao = document.getElementById("modoBtn");
+      if (botao) {
+        botao.textContent = isDarkMode ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+      }
+    }
+
+    // Alternar modo escuro
+    function alternarModo() {
+      const isDarkMode = !document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDarkMode);
+      aplicarModoEscuro();
+    }
+
+    // Aplicar modo escuro ao carregar a página
+    document.addEventListener('DOMContentLoaded', aplicarModoEscuro);
+  </script>
 </body>
 </html>

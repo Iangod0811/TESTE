@@ -193,6 +193,132 @@ footer {
   color: #f1f1f1;
 }
 
+/* ======== PÁGINA DE CONTATO ======== */
+.contato-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.info-contato, .formulario-contato, .redes-sociais {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dark-mode .info-contato,
+.dark-mode .formulario-contato,
+.dark-mode .redes-sociais {
+  background-color: #2a2a2a;
+}
+
+.form-grupo {
+  margin-bottom: 15px;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.dark-mode .form-grupo input,
+.dark-mode .form-grupo select,
+.dark-mode .form-grupo textarea {
+  background-color: #333;
+  border-color: #444;
+  color: #fff;
+}
+
+.botao-enviar {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-enviar:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ======== PÁGINA DE PROJETOS ======== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.card-projeto {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s ease;
+}
+
+.dark-mode .card-projeto {
+  background: #2a2a2a;
+}
+
+.card-projeto:hover {
+  transform: translateY(-5px);
+}
+
+.card-projeto h3 {
+  color: var(--cor-primaria);
+  margin-top: 0;
+  border-bottom: 2px solid var(--cor-secundaria);
+  padding-bottom: 10px;
+}
+
+.projeto-info {
+  margin-top: 15px;
+}
+
+.projeto-info ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.projeto-info li {
+  margin-bottom: 5px;
+}
+
+.participar {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: var(--sombra);
+  text-align: center;
+}
+
+.dark-mode .participar {
+  background: #2a2a2a;
+}
+
 /* ======== RESPONSIVIDADE ======== */
 @media (max-width: 600px) {
   header h1 {

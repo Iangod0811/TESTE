@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Blog do IFRO Zona Norte</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Blog do IFRO Zona Norte 🌿</h1>
+      <p>Notícias, eventos e novidades da nossa comunidade escolar!</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    <button id="modoBtn" onclick="alternarModo()">🌙 Modo Escuro</button>
+  </header>
+
+  <main class="container">
+    <article class="contato-content">
+      <h2>Entre em Contato</h2>
+      
+      <section class="info-contato">
+        <div class="contato-detalhes">
+          <p><strong>📍 Endereço:</strong><br>
+          Av. Governador Jorge Teixeira, 3146<br>
+          Setor Industrial, Porto Velho - RO<br>
+          CEP: 76821-002</p>
+          
+          <p><strong>📱 Telefone:</strong><br>
+          (69) 2182-3800</p>
+          
+          <p><strong>✉️ Email:</strong><br>
+          comunicacao.zonaNorte@ifro.edu.br</p>
+          
+          <p><strong>🕒 Horário de Atendimento:</strong><br>
+          Segunda a Sexta: 7h às 22h</p>
+        </div>
+      </section>
+
+      <section class="formulario-contato">
+        <h3>Envie sua Mensagem</h3>
+        <form>
+          <div class="form-grupo">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+          </div>
+
+          <div class="form-grupo">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+          </div>
+
+          <div class="form-grupo">
+            <label for="assunto">Assunto:</label>
+            <select id="assunto" name="assunto" required>
+              <option value="">Selecione um assunto</option>
+              <option value="informacoes">Informações Gerais</option>
+              <option value="eventos">Eventos e Atividades</option>
+              <option value="sugestoes">Sugestões</option>
+              <option value="outros">Outros Assuntos</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="mensagem">Sua Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
+          </div>
+
+          <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+        </form>
+      </section>
+
+      <section class="redes-sociais">
+        <h3>Nossas Redes Sociais</h3>
+        <div class="social-links">
+          <a href="#" class="social-link">📱 Instagram: @ifrozonaNorte</a>
+          <a href="#" class="social-link">📘 Facebook: IFRO Campus Porto Velho Zona Norte</a>
+          <a href="#" class="social-link">📺 YouTube: IFRO Zona Norte</a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Blog do IFRO Zona Norte. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Verificar e aplicar modo escuro ao carregar
+    function aplicarModoEscuro() {
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      document.body.classList.toggle('dark-mode', isDarkMode);
+      const botao = document.getElementById("modoBtn");
+      if (botao) {
+        botao.textContent = isDarkMode ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+      }
+    }
+
+    // Alternar modo escuro
+    function alternarModo() {
+      const isDarkMode = !document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDarkMode);
+      aplicarModoEscuro();
+    }
+
+    // Aplicar modo escuro ao carregar a página
+    document.addEventListener('DOMContentLoaded', aplicarModoEscuro);
+  </script>
+</body>
+</html>
